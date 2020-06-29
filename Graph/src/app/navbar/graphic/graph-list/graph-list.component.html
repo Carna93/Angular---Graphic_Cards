@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-4">
+        <img src="{{cards?.image}}" width="100%">
+    </div>
+    <div class="col-8">
+        <a style="color: blue;" [routerLink]="[cards?._id, 'comments']">{{cards?.title}} <small style="color: black;">{{cards?.subtitle}}</small></a>
+        <p>
+            <app-show-more [text]="cards?.description" [textLength]="130"></app-show-more>
+        </p>
+        <span class="float-right">
+            <button class="btn btn-success" (click)="vote(cards?.grade+1)">+</button>
+            {{cards?.grade}}
+            <button class="btn btn-danger" (click)="vote(cards?.grade-1)">-</button>
+        </span>
+    </div>
+</div>
